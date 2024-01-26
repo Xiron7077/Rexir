@@ -4,11 +4,13 @@ from discord import app_commands
 from discord.ui import View, Button
 from pymongo import *
 from main import is_owner
+from dotenv import load_dotenv
 import random
 import asyncio
 
 # creates a mongo client to connect to mongo database
-client = MongoClient("mongodb+srv://Xiron:249181514-....----.--...-----md@discordbot.3mgbmzd.mongodb.net/?retryWrites=true&w=majority")
+load_dotenv()
+client = MongoClient('MONGO_CLIENT')
 discord_data = client.get_database("DiscordData")
 economy_data = discord_data.Economy
 
